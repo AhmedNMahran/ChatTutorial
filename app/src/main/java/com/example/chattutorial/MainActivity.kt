@@ -53,7 +53,9 @@ class MainActivity : ComponentActivity() {
                     title = stringResource(id = R.string.app_name),
                     isShowingSearch = true,
                     onItemClick = { channel ->
-                        // TODO Start Messages Activity
+                        startActivity(
+                            MessagesActivity.getIntent(this@MainActivity,channel.cid)
+                        )
                     },
                     onBackPressed = { finish() }
                 )
